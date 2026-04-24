@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+/* ── Refined Palette ─────────────────────────────────────
+   Alabaster  #F8F5F2  — airy, warm white
+   Espresso   #2D2926  — deep, rich dark
+   Gold       #D4AF37  — metallic, premium accent
+   Terracotta #C47160  — warm secondary
+──────────────────────────────────────────────────────── */
+@theme {
+  --color-cream:           #F8F5F2;
+  --color-espresso:        #2D2926;
+  --color-espresso-light:  #5C4F4A;
+  --color-terracotta:      #C47160;
+  --color-terracotta-light: #D99A8C;
+  --color-gold:            #D4AF37;
+  --color-gold-muted:      #A8892B;
+  --color-gold-light:      #F0DFA0;
+
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans:  "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── Base ────────────────────────────────────────────── */
+body {
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-balance { text-wrap: balance; }
+
+/* ── Film filter for images ──────────────────────────── */
+.film-filter {
+  filter: sepia(0.15) contrast(1.08) brightness(0.97) saturate(1.05);
+}
+
+/* ── Glassmorphism ───────────────────────────────────── */
+.glass {
+  background: rgba(248, 245, 242, 0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+.glass-dark {
+  background: rgba(45, 41, 38, 0.75);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+}
+
+/* ── Floating card shadows ───────────────────────────── */
+.shadow-float {
+  box-shadow:
+    0 2px 8px -2px rgba(45, 41, 38, 0.06),
+    0 8px 24px -6px rgba(45, 41, 38, 0.08);
+}
+
+.shadow-float-hover {
+  box-shadow:
+    0 8px 24px -4px rgba(45, 41, 38, 0.10),
+    0 24px 64px -12px rgba(45, 41, 38, 0.16),
+    0 0 0 1px rgba(212, 175, 55, 0.08);
+}
+
+/* ── Gold shimmer on skeleton ────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(45, 41, 38, 0.05) 25%,
+    rgba(45, 41, 38, 0.09) 50%,
+    rgba(45, 41, 38, 0.05) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+/* ── Steam / smoke animation ─────────────────────────── */
+@keyframes steam {
+  0%   { transform: translateY(0)     translateX(0)    scale(1);    opacity: 0; }
+  15%  { opacity: 0.5; }
+  70%  { opacity: 0.2; }
+  100% { transform: translateY(-180px) translateX(12px) scale(1.6);  opacity: 0; }
+}
+
+@keyframes steam-alt {
+  0%   { transform: translateY(0)     translateX(0)    scale(1);    opacity: 0; }
+  15%  { opacity: 0.4; }
+  70%  { opacity: 0.15; }
+  100% { transform: translateY(-200px) translateX(-10px) scale(1.4); opacity: 0; }
+}
+
+.steam-particle { animation: steam     var(--dur, 4s) ease-in-out infinite var(--delay, 0s); }
+.steam-particle-alt { animation: steam-alt var(--dur, 5s) ease-in-out infinite var(--delay, 0s); }
+
+/* ── Anti-gravity button feel ────────────────────────── */
+.btn-float {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.2s ease;
+}
+.btn-float:hover  { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(45,41,38,0.14); }
+.btn-float:active { transform: translateY(0px);  box-shadow: 0 2px 8px  rgba(45,41,38,0.10); }
+
+/* ── Gold accent utilities ───────────────────────────── */
+.text-gold        { color: var(--color-gold); }
+.text-gold-muted  { color: var(--color-gold-muted); }
+.bg-gold          { background-color: var(--color-gold); }
+.border-gold      { border-color: var(--color-gold); }
+
+/* ── Scroll-telling step connector ──────────────────── */
+.step-connector {
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-gold), transparent);
+  transform-origin: top;
+}
+
+/* ── Subscribe toggle ────────────────────────────────── */
+.toggle-track {
+  transition: background-color 0.25s ease;
+}
+.toggle-thumb {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
