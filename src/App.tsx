@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { Story } from './pages/Story';
 import { Menu } from './pages/Menu';
 import { Journal } from './pages/Journal';
+import { JournalDetail } from './pages/JournalDetail';
 import { VisitUs } from './pages/VisitUs';
 import { Quiz } from './pages/Quiz';
 import { BrewGuides } from './pages/BrewGuides';
@@ -23,6 +24,7 @@ const AnimatedRoutes = () => {
           <Route path="/story" element={<Story />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/journal" element={<Journal />} />
+          <Route path="/journal/:id" element={<JournalDetail />} />
           <Route path="/visit" element={<VisitUs />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/brew" element={<BrewGuides />} />
@@ -37,7 +39,7 @@ export default function App() {
   return (
     <Router>
       <CartProvider>
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col noise-overlay">
           <Navbar />
           <CartDrawer />
           <main className="flex-1">
