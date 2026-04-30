@@ -29,7 +29,7 @@ export const CartDrawer = () => {
             className="fixed top-0 right-0 h-full w-full max-w-md bg-cream z-50 flex flex-col shadow-2xl"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-8 py-6 border-b border-espresso/10">
+            <div className="flex items-center justify-between px-5 md:px-8 py-6 border-b border-espresso/10">
               <div className="flex items-center gap-3">
                 <ShoppingBag className="w-5 h-5" />
                 <h2 className="font-serif text-2xl">Your Cart</h2>
@@ -48,7 +48,7 @@ export const CartDrawer = () => {
             </div>
 
             {/* Items */}
-            <div className="flex-1 overflow-y-auto px-8 py-6">
+            <div className="flex-1 overflow-y-auto px-5 md:px-8 py-6">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-center gap-6">
                   <ShoppingBag className="w-12 h-12 text-espresso/20" />
@@ -127,7 +127,7 @@ export const CartDrawer = () => {
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="px-8 py-6 border-t border-espresso/10 bg-white">
+              <div className="px-5 md:px-8 py-6 border-t border-espresso/10 bg-white">
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-sm uppercase tracking-widest font-medium">Subtotal</span>
                   <span className="font-serif text-2xl">${totalPrice.toFixed(2)}</span>

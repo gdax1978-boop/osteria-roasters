@@ -203,7 +203,7 @@ const GuideSection = ({ guide, index }: { guide: BrewGuide; index: number }) => 
           {/* Image with scroll-driven scale */}
           <motion.div
             style={{ opacity: imgOpacity }}
-            className={`${isEven ? '' : 'lg:order-last'} sticky top-24`}
+            className={`${isEven ? '' : 'lg:order-last'} lg:sticky top-24`}
           >
             <div className="aspect-[4/3] overflow-hidden rounded-sm shadow-float">
               <motion.img

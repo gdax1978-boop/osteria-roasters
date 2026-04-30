@@ -145,23 +145,23 @@ const HeroParallax = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.62, duration: 0.7 }}
-          className="flex flex-wrap gap-5 items-center"
+          className="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-5 sm:items-center"
         >
           <Link
             to="/menu"
-            className="bg-gold text-espresso px-10 py-4 uppercase tracking-widest text-xs font-semibold hover:bg-gold/80 transition-colors btn-float rounded-sm"
+            className="bg-gold text-espresso text-center px-8 sm:px-10 py-4 uppercase tracking-widest text-xs font-semibold hover:bg-gold/80 transition-colors btn-float rounded-sm"
           >
             Shop Coffee
           </Link>
           <Link
             to="/quiz"
-            className="border border-cream/30 text-cream px-10 py-4 uppercase tracking-widest text-xs font-semibold hover:border-gold hover:text-gold transition-colors btn-float rounded-sm"
+            className="border border-cream/30 text-cream text-center px-8 sm:px-10 py-4 uppercase tracking-widest text-xs font-semibold hover:border-gold hover:text-gold transition-colors btn-float rounded-sm"
           >
             Find Your Roast
           </Link>
           <Link
             to="/story"
-            className="text-cream/70 uppercase tracking-widest text-xs font-semibold hover:text-gold transition-colors flex items-center gap-2"
+            className="text-cream/70 uppercase tracking-widest text-xs font-semibold hover:text-gold transition-colors flex items-center justify-center sm:justify-start gap-2"
           >
             Our Story <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -189,7 +189,7 @@ const FeaturedProducts = () => {
   const { data: featured, loading } = useApi<Product[]>('/api/products/featured');
 
   return (
-    <section className="py-32 px-6">
+    <section className="py-16 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
           <div>

@@ -123,6 +123,12 @@ export const Navbar = () => {
           {/* Mobile controls */}
           <div className="lg:hidden flex items-center gap-4 z-50">
             <button
+              onClick={() => { setIsOpen(false); setSearchOpen(!searchOpen); }}
+              className={`transition-colors hover:text-gold ${scrolled || isOpen ? 'text-espresso' : 'text-cream'}`}
+            >
+              <Search className="w-5 h-5" />
+            </button>
+            <button
               onClick={() => openCart(true)}
               className={`relative transition-colors hover:text-gold ${scrolled || isOpen ? 'text-espresso' : 'text-cream'}`}
             >

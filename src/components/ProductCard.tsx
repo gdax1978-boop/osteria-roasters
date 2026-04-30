@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, RefreshCw } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -64,14 +64,17 @@ export const ProductCard = ({
 
   return (
     <motion.div
-      style={{ filter: 'drop-shadow(0 4px 24px rgba(45,41,38,0.07))', marginTop: floatOffset }}
+      style={{
+        filter: 'drop-shadow(0 4px 24px rgba(45,41,38,0.07))',
+        '--float-offset': `${floatOffset}px`,
+      } as CSSProperties}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -10 }}
       animate={{ y: 0 }}
-      className="group flex flex-col cursor-pointer"
+      className="group flex flex-col cursor-pointer md:[margin-top:var(--float-offset)]"
     >
       {/* Image */}
       <div className="relative aspect-[4/5] overflow-hidden rounded-t-sm bg-espresso/5">

@@ -53,7 +53,7 @@ export const Story = () => (
     </div>
 
     {/* Image duo */}
-    <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 gap-6 mb-20">
+    <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 gap-6 mb-20">
       <img
         src="https://picsum.photos/seed/beans1/800/1000"
         alt="Coffee detail"
@@ -63,7 +63,7 @@ export const Story = () => (
       <img
         src="https://picsum.photos/seed/beans2/800/1000"
         alt="Roasting process"
-        className="w-full aspect-[4/5] object-cover film-filter rounded-sm mt-16"
+        className="w-full aspect-[4/5] object-cover film-filter rounded-sm sm:mt-16"
         referrerPolicy="no-referrer"
       />
     </div>
